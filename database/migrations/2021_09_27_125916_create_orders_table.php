@@ -16,11 +16,11 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id()->onDelete('cascade');
             $table->timestamps();
-            $table->integer('price');
             $table->integer('profit');
-            $table->integer('status');
+            $table->string('status');
             $table->foreignId('user_id');
-            $table->string('type')->default('basic');
+            $table->integer('principle');
+            $table->integer('amount');
         });
     }
 

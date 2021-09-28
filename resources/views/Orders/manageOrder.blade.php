@@ -447,12 +447,11 @@
                                                 <th class="text-center">
                                                     Orderid
                                                 </th>
-                                                <th>OrderTitle</th>
-                                                <th>ViewOrder</th>
-                                                <th>DueDate<i class="fa fa-calendar" aria-hidden="true"></i></th>
-                                                <th>Duetime<i class="fa fa-calendar" aria-hidden="true"></i></th>
+                                                <th>PlacedAt<i class="fa fa-calendar" aria-hidden="true"></i></th>
+                                                <th>Due<i class="fa fa-calendar" aria-hidden="true"></i></th>
+                                                <th>Amount</th>
                                                 <th>Status</th>
-                                                <th>Actions</th>
+                                                <th>Cashout Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -462,14 +461,14 @@
                                                         <td>
                                                             {{ $order -> id }}
                                                         </td>
-                                                        <td>{{ $order->ordertitle }}</td>
-                                                        <td class="align-middle justify-content ">
-                                                                <a href="{{ route('editorders',[
-                                                                    'id'=>$order->id
-                                                                ]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        </td>
-                                                        <td>{{ $order->duedate }}</td>
-                                                        <td>{{ $order->duetime }}</td>
+                                                        <td>{{ $order->created_at}}</td>
+                                                            {{-- <td class="align-middle justify-content ">
+                                                                    <a href="{{ route('editorders',[
+                                                                        'id'=>$order->id
+                                                                    ]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                            </td> --}}
+                                                        <td>{{ $order->updated_at}}</td>
+                                                        <td>{{ $order->principle}}</td>
                                                             @switch($order->status)
                                                                 @case('pending')
                                                                 <td><div class="badge badge-danger">{{ $order->status }}</div></td>

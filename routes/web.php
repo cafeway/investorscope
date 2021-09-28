@@ -11,6 +11,7 @@ use App\Http\Controllers\profile;
 use App\Http\Controllers\pwdreset;
 use App\Http\Controllers\register;
 use App\Http\Controllers\timeline;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,8 +52,10 @@ Route::get('/orders',[OrderManager::class,'index'])->name('manageorder');
 Route::post('/orders',[OrderManager::class,'post']);
 
 Route::get('/placeorder',[OrderPlacer::class,'index'])->name('placeorder');
-Route::post('/placeorder',[OrderPlacer::class,'post']);
-
+Route::post('/placeorder/order1',[OrderPlacer::class,'order1'])->name('order1');
+Route::post('/placeorder/order2',[OrderPlacer::class,'order2'])->name('order2');
+Route::post('/placeorder/order3',[OrderPlacer::class,'order3'])->name('order3');
+Route::post('/placeorder/order4',[OrderPlacer::class,'order4'])->name('order4');
 
 Route::get('/billing',[Fund::class,'index'])->name('fund');
 Route::post('/billing',[Fund::class,'post']);
