@@ -35,11 +35,18 @@ class OrderPlacer extends Controller
                 'amount'=> $amount_invested,
             ]);
 
-            // deduct user balance
+            // deduct amount invested from user balance and update user balance
             $user_balance = Auth::user()->balance;
             $new_balance = $user_balance - $amount_invested;
             DB::table('users')->where('email',Auth::user()->email)->update([
                 'balance'=>$new_balance,
+            ]);
+
+            // send user a message on successfull placement
+
+            $req->user()->messages()->create([
+                'body'=>'your order of'. ' '. $amount_invested . '  '.'was successfull',
+                'status'=> false
             ]);
 
             return redirect($to = '/orders');

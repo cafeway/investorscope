@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class message extends Model
 {
     use HasFactory;
+
+    // mass fillables
+
+    protected $fillable = [
+        'body',
+        'status',
+    ];
 }
