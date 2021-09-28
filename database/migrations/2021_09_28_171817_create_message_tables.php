@@ -13,9 +13,12 @@ class CreateMessageTables extends Migration
      */
     public function up()
     {
-        Schema::create('message_tables', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->longText('body');
+            $table->foreignId('user_id');
+            $table->boolean('status');
         });
     }
 
