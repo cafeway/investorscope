@@ -239,7 +239,7 @@
         <div class="main-sidebar sidebar-style-3">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="index-2.html">CodiePie</a>
+                    <a href="index-2.html">Trident inc</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
                     <a href="index-2.html">CP</a>
@@ -499,7 +499,7 @@
                                         <div class="row">
                                             <div class="form-group col-md-12 col-12">
                                                 <label>Invite a Friend & Earn</label>
-                                                <input type="text" class="form-control" value="{{ Auth::user()->country }}" readonly required="">
+                                                <input type="text" class="form-control" value="{{ $url }}" readonly required="">
                                                 <div class="invalid-feedback">Please fill in the first name</div>
                                             </div>
                                         </div>

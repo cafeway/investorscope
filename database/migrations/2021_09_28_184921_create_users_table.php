@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('phonenumber')->unique();
             $table->string('country');
-            $table->string('lv1')->default('bcaranja@gmail.com');
-            $table->string('lv2')->default('bcaranja@gmail.com');
-            $table->string('lv3')->default('bcaranja@gmail.com');
+            $table->string('lv1')->nullable();
+            $table->string('lv2')->nullable();
+            $table->string('lv3')->nullable();
             $table->integer('balance')->default(0);
             $table->integer('downlines')->default(0);
             $table->integer('bonus')->default(0);
