@@ -12,7 +12,7 @@ class profile extends Controller
     {
         // generating an invite link
         $url = url($path='/register',$parameters=[
-
+            Auth::user()->uuid
         ]);
         return view('user.profile',[
             'url' => $url
