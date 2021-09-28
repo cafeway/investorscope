@@ -10,10 +10,9 @@ class profile extends Controller
 
     public function index ()
     {
-        // generating unique uuid for the user
-        $uuid = Str::uuid();
+        // generating an invite link
         $url = url($path='/register',$parameters=[
-            $uuid
+
         ]);
         return view('user.profile',[
             'url' => $url

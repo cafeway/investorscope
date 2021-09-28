@@ -40,25 +40,25 @@ Route::post('/register',[register::class,'post']);
 Route::get('/pwdreset',[pwdreset::class,'index'])->name('resetpassword');
 Route::post('/pwdreset',[pwdreset::class,'reset']);
 
-Route::get('/profile',[profile::class,'index'])->name('profile');
+Route::get('/profile',[profile::class,'index'])->name('profile')->middleware('auth');
 Route::post('/profile',[profile::class,'post']);
 
-Route::get('/timeline',[timeline::class,'index'])->name('timeline');
+Route::get('/timeline',[timeline::class,'index'])->name('timeline')->middleware('auth');
 Route::post('/timeline',[timeline::class,'post']);
 
 Route::post('/logout',[logout::class,'index'])->name('logout');
 
-Route::get('/orders',[OrderManager::class,'index'])->name('manageorder');
+Route::get('/orders',[OrderManager::class,'index'])->name('manageorder')->middleware('auth');
 Route::post('/orders',[OrderManager::class,'post']);
 
 Route::get('/placeorder',[OrderPlacer::class,'index'])->name('placeorder');
-Route::post('/placeorder/order1',[OrderPlacer::class,'order1'])->name('order1');
-Route::post('/placeorder/order2',[OrderPlacer::class,'order2'])->name('order2');
-Route::post('/placeorder/order3',[OrderPlacer::class,'order3'])->name('order3');
-Route::post('/placeorder/order4',[OrderPlacer::class,'order4'])->name('order4');
+Route::post('/placeorder/order1',[OrderPlacer::class,'order1'])->name('order1')->middleware('auth');
+Route::post('/placeorder/order2',[OrderPlacer::class,'order2'])->name('order2')->middleware('auth');
+Route::post('/placeorder/order3',[OrderPlacer::class,'order3'])->name('order3')->middleware('auth');
+Route::post('/placeorder/order4',[OrderPlacer::class,'order4'])->name('order4')->middleware('auth');
 
-Route::get('/billing',[Fund::class,'index'])->name('fund');
-Route::post('/billing',[Fund::class,'post']);
+Route::get('/billing',[Fund::class,'index'])->name('fund')->middleware('auth');
+Route::post('/billing',[Fund::class,'post'])->middleware('auth');
 
 
 Route::get('/chat',[Chat::class,'index'])->name('chat');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 class register extends Controller
@@ -29,6 +30,7 @@ class register extends Controller
             'email'=> 'email|required|unique:users',
             'phonenumber'=>'required|unique:users,phonenumber'
         ]);
+        $uuid = Str::uuid();
         User::create([
             'first_name' => $req -> first_name,
             'last_name' => $req -> last_name,
@@ -37,6 +39,7 @@ class register extends Controller
             'phonenumber' => $req -> phonenumber ,
             'username' => $req -> username,
             'country' => $req -> country,
+            'uuid'=>$uuid,
         ]);
         return redirect($to= '/login');
     }

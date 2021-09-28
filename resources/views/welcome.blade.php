@@ -241,7 +241,7 @@
         <div class="main-sidebar sidebar-style-3">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="index-2.html">Trident</a>
+                    <a href="index-2.html">Trident inc</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
                     <a href="index-2.html">CP</a>
@@ -257,7 +257,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{ route('profile') }}">View Profile</a></li>
 
-                            <li><a class="nav-link" href="layout-top-navigation.html">Edit Profile</a></li>
+                            {{-- <li><a class="nav-link" href="layout-top-navigation.html">Edit Profile</a></li> --}}
                             <li><a class="nav-link" href="{{ route('resetpassword')  }}">Change password</a></li>
                         </ul>
                     </li>
